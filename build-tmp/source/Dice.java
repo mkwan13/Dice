@@ -34,7 +34,7 @@ public void draw()
 			sum = sum + bob.dot;
 		}
 	}
-	text ("The sum of all the dice is " + sum, 180, 520);
+	text ("The sum of all the dice is " + sum, 170, 520);
 }
 public void mousePressed()
 {
@@ -80,7 +80,6 @@ class Die //models one single dice cube
 		{
 			dot = 6;
 		}
-
 	}
 
 	public void show()
@@ -126,9 +125,7 @@ class Die //models one single dice cube
 			ellipse (myX+35, myY+15, 5, 5);
 			ellipse (myX+15, myY+25, 5, 5);
 			ellipse (myX+35, myY+25, 5, 5);
-		}
-
-					
+		}					
 	}
 }
   static public void main(String[] passedArgs) {

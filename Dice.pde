@@ -18,7 +18,7 @@ void draw()
 			sum = sum + bob.dot;
 		}
 	}
-	text ("The sum of all the dice is " + sum, 180, 520);
+	text ("The sum of all the dice is " + sum, 170, 520);
 }
 void mousePressed()
 {
