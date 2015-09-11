@@ -1,10 +1,26 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class Dice extends PApplet {
+
 Die bob;
-void setup()
+public void setup()
 {
 	size(500, 550);
 	noLoop();
 }
-void draw()
+public void draw()
 {
 	int sum = 0;
 	background(51);
@@ -20,7 +36,7 @@ void draw()
 	}
 	text ("The sum of all the dice is " + sum, 180, 520);
 }
-void mousePressed()
+public void mousePressed()
 {
 	redraw();
 }
@@ -37,26 +53,26 @@ class Die //models one single dice cube
 		curve = c; //variable initializations here
 	}
 
-	void roll()
+	public void roll()
 	{
 		double dRandom = Math.random();
-		if(dRandom < .166666)
+		if(dRandom < .166666f)
 		{
 			dot = 1;
 		}
-		else if (dRandom < .333333)
+		else if (dRandom < .333333f)
 		{
 			dot = 2;
 		}
-		else if (dRandom < .5)
+		else if (dRandom < .5f)
 		{
 			dot = 3;
 		}
-		else if (dRandom < .666666)
+		else if (dRandom < .666666f)
 		{
 			dot = 4;
 		}
-		else if (dRandom < .833333)
+		else if (dRandom < .833333f)
 		{
 			dot = 5;
 		}
@@ -64,9 +80,10 @@ class Die //models one single dice cube
 		{
 			dot = 6;
 		}
+
 	}
 
-	void show()
+	public void show()
 	{
 		rect(myX, myY, myWidth, myHeight, curve);
 		if(dot == 1)
@@ -109,6 +126,17 @@ class Die //models one single dice cube
 			ellipse (myX+35, myY+15, 5, 5);
 			ellipse (myX+15, myY+25, 5, 5);
 			ellipse (myX+35, myY+25, 5, 5);
-		}					
+		}
+
+					
 	}
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "Dice" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
